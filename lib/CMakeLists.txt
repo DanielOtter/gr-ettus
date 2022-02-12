@@ -30,6 +30,8 @@ list(APPEND ettus_sources
     rfnoc_rx_streamer_impl.cc
     rfnoc_tx_radio_impl.cc
     rfnoc_tx_streamer_impl.cc
+    rfnoc_addcomplexmult_impl.cc
+    rfnoc_splitstream_impl.cc
 )
 if(ENABLE_FOSPHOR)
     list(APPEND ettus_sources

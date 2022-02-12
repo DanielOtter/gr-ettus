@@ -68,6 +68,8 @@
 #include <ettus/rfnoc_rx_streamer.h>
 #include <ettus/rfnoc_tx_radio.h>
 #include <ettus/rfnoc_tx_streamer.h>
+#include <ettus/rfnoc_addcomplexmult.h>
+#include <ettus/rfnoc_splitstream.h>
 %}
 
 #ifdef ENABLE_FOSPHOR
@@ -138,6 +140,8 @@
 %include <ettus/rfnoc_fir.h>
 %include <ettus/rfnoc_rx_radio.h>
 %include <ettus/rfnoc_tx_radio.h>
+%include <ettus/rfnoc_addcomplexmult.h>
+%include <ettus/rfnoc_splitstream.h>
 
 %template(set_int_property) gr::ettus::rfnoc_block::set_property<int>;
 %template(set_bool_property) gr::ettus::rfnoc_block::set_property<bool>;
@@ -158,6 +162,8 @@ GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_duc);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_fir);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_rx_radio);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_tx_radio);
+GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_addcomplexmult);
+GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_splitstream);
 
 #ifdef ENABLE_FOSPHOR
 %include <ettus/fosphor_display.h>

@@ -20,6 +20,8 @@ install(FILES
     rfnoc_rx_streamer.h
     rfnoc_tx_radio.h
     rfnoc_tx_streamer.h
+    rfnoc_addcomplexmult.h
+    rfnoc_splitstream.h
     DESTINATION include/ettus
 )
 

@@ -31,7 +31,7 @@ namespace ettus {
 class rfnoc_rx_radio_impl : public rfnoc_rx_radio
 {
 public:
-    rfnoc_rx_radio_impl(::uhd::rfnoc::noc_block_base::sptr block_ref);
+    rfnoc_rx_radio_impl(::uhd::rfnoc::noc_block_base::sptr block_ref, rfnoc_graph::sptr graph);
     ~rfnoc_rx_radio_impl();
 
     /*** API *****************************************************************/
@@ -53,9 +53,12 @@ public:
     void set_dc_offset(const std::complex<double>& offset, const size_t chan);
     void set_iq_balance(const bool enable, const size_t chan);
     void set_iq_balance(const std::complex<double>& correction, const size_t chan);
+    bool start() override;
+    bool stop() override;
 
 private:
     ::uhd::rfnoc::radio_control::sptr d_radio_ref;
+    rfnoc_graph::sptr d_graph;
 };
 
 } // namespace ettus

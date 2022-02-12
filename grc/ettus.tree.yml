@@ -14,6 +14,8 @@
     - ettus_rfnoc_tx_radio
     - ettus_rfnoc_rx_streamer
     - ettus_rfnoc_tx_streamer
+    - ettus_rfnoc_addcomplexmult
+    - ettus_rfnoc_splitstream
   - RFNoC Image Builder:
       - Blocks:
         - ettus_fpga_ddc

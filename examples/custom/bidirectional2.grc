@@ -63,36 +63,6 @@ blocks:
     coordinate: [192, 12.0]
     rotation: 0
     state: true
-- name: variable_qtgui_chooser_0
-  id: variable_qtgui_chooser
-  parameters:
-    comment: ''
-    gui_hint: ''
-    label: ''
-    label0: Default
-    label1: Start
-    label2: Stop
-    label3: ''
-    label4: ''
-    labels: '[]'
-    num_opts: '3'
-    option0: '0'
-    option1: '1'
-    option2: '2'
-    option3: '3'
-    option4: '4'
-    options: '[0, 1, 2]'
-    orient: Qt.QVBoxLayout
-    type: int
-    value: '0'
-    widget: combo_box
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [432, 28.0]
-    rotation: 0
-    state: true
 - name: ettus_rfnoc_ddc_0
   id: ettus_rfnoc_ddc
   parameters:
@@ -155,7 +125,6 @@ blocks:
     minoutbuf: '0'
     num_chans: '1'
     rate: 2e8
-    set_stream: variable_qtgui_chooser_0
   states:
     bus_sink: false
     bus_source: false
