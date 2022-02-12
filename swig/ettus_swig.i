@@ -63,6 +63,7 @@
 #include <ettus/rfnoc_block.h>
 #include <ettus/rfnoc_ddc.h>
 #include <ettus/rfnoc_duc.h>
+#include <ettus/rfnoc_fir.h>
 #include <ettus/rfnoc_rx_radio.h>
 #include <ettus/rfnoc_rx_streamer.h>
 #include <ettus/rfnoc_tx_radio.h>
@@ -134,6 +135,7 @@
 %include <ettus/rfnoc_block_generic.h>
 %include <ettus/rfnoc_ddc.h>
 %include <ettus/rfnoc_duc.h>
+%include <ettus/rfnoc_fir.h>
 %include <ettus/rfnoc_rx_radio.h>
 %include <ettus/rfnoc_tx_radio.h>
 
@@ -153,6 +155,7 @@ GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_rx_streamer);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_block_generic);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_ddc);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_duc);
+GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_fir);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_rx_radio);
 GR_SWIG_BLOCK_MAGIC2(ettus, rfnoc_tx_radio);
 

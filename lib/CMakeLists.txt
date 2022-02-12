@@ -24,6 +24,7 @@ list(APPEND ettus_sources
     rfnoc_ddc_impl.cc
     rfnoc_duc_impl.cc
     rfnoc_duc_impl.cc
+    rfnoc_fir_impl.cc
     rfnoc_graph_impl.cc
     rfnoc_rx_radio_impl.cc
     rfnoc_rx_streamer_impl.cc

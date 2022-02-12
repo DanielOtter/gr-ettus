@@ -27,6 +27,7 @@ install(FILES
     ettus_rfnoc_ddc.block.yml
     ettus_rfnoc_duc.block.yml
     ettus_rfnoc_fft.block.yml
+    ettus_rfnoc_fir.block.yml
     ettus_rfnoc_fosphor.block.yml
     ettus_rfnoc_graph.block.yml
     ettus_rfnoc_rx_radio.block.yml
