@@ -1,0 +1,196 @@
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: bidirectional2
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: 'RFNoC: Bidirectional2'
+    window_size: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: ettus_rfnoc_graph
+  id: ettus_rfnoc_graph
+  parameters:
+    alias: ''
+    clock_source_0: ''
+    clock_source_1: ''
+    clock_source_2: ''
+    clock_source_3: ''
+    clock_source_4: ''
+    clock_source_5: ''
+    clock_source_6: ''
+    clock_source_7: ''
+    comment: ''
+    dev_addr: ''
+    dev_args: addr=10.10.23.2
+    num_mboards: '1'
+    time_source_0: ''
+    time_source_1: ''
+    time_source_2: ''
+    time_source_3: ''
+    time_source_4: ''
+    time_source_5: ''
+    time_source_6: ''
+    time_source_7: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [192, 12.0]
+    rotation: 0
+    state: true
+- name: variable_qtgui_chooser_0
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: Default
+    label1: Start
+    label2: Stop
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option0: '0'
+    option1: '1'
+    option2: '2'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: int
+    value: '0'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 28.0]
+    rotation: 0
+    state: true
+- name: ettus_rfnoc_ddc_0
+  id: ettus_rfnoc_ddc
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    freq: '0'
+    instance_index: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    output_rate: 100e3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [344, 220.0]
+    rotation: 0
+    state: enabled
+- name: ettus_rfnoc_duc_0
+  id: ettus_rfnoc_duc
+  parameters:
+    affinity: ''
+    alias: ''
+    block_args: ''
+    comment: ''
+    device_select: '-1'
+    freq: '0'
+    input_rate: 4e5
+    instance_index: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [792, 220.0]
+    rotation: 0
+    state: enabled
+- name: ettus_rfnoc_rx_radio_0
+  id: ettus_rfnoc_rx_radio
+  parameters:
+    affinity: ''
+    agc: Default
+    alias: ''
+    antenna: RX2
+    bandwidth: 200e6
+    block_args: spp=128
+    comment: ''
+    dc_offset: 'True'
+    device_select: '-1'
+    frequency: 1e9
+    gain: '32'
+    instance_index: '0'
+    iq_balance: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_chans: '1'
+    rate: 2e8
+    set_stream: variable_qtgui_chooser_0
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 172.0]
+    rotation: 0
+    state: enabled
+- name: ettus_rfnoc_tx_radio_0
+  id: ettus_rfnoc_tx_radio
+  parameters:
+    affinity: ''
+    agc: Default
+    alias: ''
+    antenna: TX/RX
+    bandwidth: '0'
+    block_args: spp=128
+    comment: ''
+    device_select: '-1'
+    frequency: 1e9
+    gain: '32'
+    instance_index: '1'
+    num_chans: '1'
+    rate: 200e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1144, 188.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [ettus_rfnoc_ddc_0, '0', ettus_rfnoc_duc_0, '0']
+- [ettus_rfnoc_duc_0, '0', ettus_rfnoc_tx_radio_0, '0']
+- [ettus_rfnoc_rx_radio_0, '0', ettus_rfnoc_ddc_0, '0']
+
+metadata:
+  file_format: 1
